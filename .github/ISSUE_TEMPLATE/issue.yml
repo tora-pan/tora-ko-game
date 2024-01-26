@@ -1,0 +1,49 @@
+name: Feature Request
+description: Submit a new feature request
+title: "[Feature Request]: "
+labels: ["enhancement", "triage"]
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to submit a feature request!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details / 連絡先
+      description: How can we get in touch with you if we need more info? / もし追加の情報が必要な場合、どのように連絡できますか？
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description / 機能の説明
+      description: Describe the feature you are requesting / リクエストする機能を説明してください
+      placeholder: Describe the new feature...
+      value: "I'd like to see a feature that..."
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority / 優先度
+      description: How would you rate the priority of this feature? / この機能の優先度をどのように評価しますか？
+      options:
+        - Low / 低
+        - Medium / 中
+        - High / 高
+      default: 1
+    validations:
+      required: true
+  - type: checkboxes
+    id: additional-info
+    attributes:
+      label: Additional Information / その他の情報
+      description: Check any additional information you want to provide / 提供したい追加情報を確認してください
+      options:
+        - label: I have attached relevant files / 関連するファイルを添付しました
+        - label: I am open to collaboration on this feature / この機能についての協力を歓迎します
