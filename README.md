@@ -1,3 +1,6 @@
+![developer_messy_room](https://github.com/tora-pan/tora-ko-game/assets/81494248/d930d84b-cc3a-4b19-bd99-be2f4f04abbf)
+
+
 # Tora and Kouki's Dev Adventure
 
 A simple JavaScript game built using canvas and sprite animations.
