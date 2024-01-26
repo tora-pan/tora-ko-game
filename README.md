@@ -14,8 +14,8 @@ This game is a [brief description of your game]. It is built using JavaScript an
 
 ## Installation
 
-1. Clone the repository: `git clone [https://github.com/tora-pan/tora-ko-game.git]`
-2. Navigate to the project directory: `cd [tora-ko-game/]`
+1. Clone the repository: `git clone https://github.com/tora-pan/tora-ko-game.git`
+2. Navigate to the project directory: `cd tora-ko-game/`
 3. Open the `index.html` file in a web browser.
 
 ## Usage
