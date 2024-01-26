@@ -5,11 +5,10 @@ class Overworld {
         this.ctx = this.canvas.getContext('2d');
     }
 
-    
     init() {
-      const x = 5;
-      const y = 6;
-      const GRID_SIZE = 16;
+        const x = 5;
+        const y = 6;
+        const GRID_SIZE = 16;
 
         const image = new Image();
         image.src = '/assets/images/maps/DemoLower.png';
@@ -17,18 +16,19 @@ class Overworld {
             this.ctx.drawImage(image, 0, 0);
         };
 
-        const shadow = new Image();
-        shadow.src = '/assets/images/characters/shadow.png';
-        shadow.onload = () => {
-            this.ctx.drawImage(shadow, 0, 0, 32,32, x * GRID_SIZE -8, y * GRID_SIZE -18, 32, 32);
-        };
+        const hero = new GameObject({
+            x: 5,
+            y: 6,
+        });
+        const npc = new GameObject({
+            x: 7,
+            y: 9,
+            src: '/assets/images/characters/people/npc1.png',
+        });
 
-        
-
-        const player = new Image();
-        player.src = '/assets/images/characters/people/hero.png';
-        player.onload = () => {
-            this.ctx.drawImage(player, 0, 0, 32,32, x * GRID_SIZE -8, y * GRID_SIZE -18, 32, 32);
-        };
+        setTimeout(() => {
+            hero.sprite.draw(this.ctx);
+            npc.sprite.draw(this.ctx);
+        }, 200);
     }
 }
