@@ -1,4 +1,4 @@
-# Game Name
+# Tora and Kouki's Dev Adventure
 
 A simple JavaScript game built using canvas and sprite animations.
 
