@@ -45,7 +45,6 @@ window.OverworldMaps = {
         y: utils.withGrid(6),
       }),
       npc: new Person({
-        isPlayerControlled: false,
         x: utils.withGrid(3),
         y: utils.withGrid(8),
         src: '/assets/images/characters/people/npc4.png',
