@@ -11,13 +11,26 @@ class Person extends GameObject {
     };
   }
   update(state) {
-    this.updatePosition();
-    if (
-      this.isPlayerControlled &&
-      this.movingProgressRemainging === 0 &&
-      state.arrow
-    ) {
-      this.direction = state.arrow;
+    if (this.movingProgressRemainging > 0) {
+      this.updatePosition();
+    } else {
+      if (this.isPlayerControlled && state.arrow) {
+        this.startBehavior(state, {
+          type: 'walk',
+          direction: state.arrow,
+        });
+      }
+      this.updateSprite(state);
+    }
+  }
+  startBehavior(state, behavior) {
+    this.direction = behavior.direction;
+    if (behavior.type === 'walk') {
+      if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+        return;
+      }
+
+      state.map.moveWall(this.x, this.y, this.direction);
       this.movingProgressRemainging = 16;
     }
   }
@@ -27,5 +40,12 @@ class Person extends GameObject {
       this[property] += change;
       this.movingProgressRemainging -= 1;
     }
+  }
+  updateSprite() {
+    if (this.movingProgressRemainging > 0) {
+      this.sprite.setAnimation('walk-' + this.direction);
+      return;
+    }
+    this.sprite.setAnimation('idle-' + this.direction);
   }
 }
