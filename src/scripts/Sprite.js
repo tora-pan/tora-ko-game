@@ -17,6 +17,9 @@ class Sprite {
       this.shadow.src = '/assets/images/characters/shadow.png';
     }
 
+    // setup the behaviors
+    this.behaviorLoop = config.behaviorLoop || [];
+
     // setup the animations
     this.animations = config.animations || {
       'idle-down': [[0, 0]],
