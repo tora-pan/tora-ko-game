@@ -33,7 +33,11 @@ class OverworldEvent {
     const actor = this.map.gameObjects[this.event.who];
     actor.startBehavior(
       { map: this.map },
-      { type: 'walk', direction: this.event.direction, retry: true },
+      {
+        type: 'walk',
+        direction: this.event.direction,
+        retry: true,
+      },
     );
     const completeHandler = (e) => {
       if (e.detail.whoId === this.event.who) {
@@ -42,5 +46,13 @@ class OverworldEvent {
       }
     };
     document.addEventListener('PersonWalkingComplete', completeHandler);
+  }
+
+  textMessage(resolve) {
+    const message = new TextMessage({
+      text: this.event.text,
+      onComplete: () => resolve(),
+    });
+    message.init(document.querySelector('.game-container'));
   }
 }

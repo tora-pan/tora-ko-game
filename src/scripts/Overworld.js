@@ -40,40 +40,61 @@ class Overworld {
     step();
   }
 
+  bindActionInput() {
+    new KeyPressListener(13, () => {
+      this.map.checkForActionCutscene();
+    });
+  }
+
   init() {
     this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
     this.map.mountObjects();
     this.directionInput = new DirectionInput();
+    this.bindActionInput();
     this.directionInput.init();
     this.startGameLoop();
-    this.map.startCutscene([
-      {
-        who: 'hero',
-        type: 'walk',
-        direction: 'down',
-      },
-      {
-        who: 'hero',
-        type: 'walk',
-        direction: 'down',
-      },
-      {
-        who: 'npcA',
-        type: 'walk',
-        direction: 'up',
-      },
-      {
-        who: 'npcB',
-        type: 'stand',
-        direction: 'right',
-        duration: 800,
-      },
-      {
-        who: 'hero',
-        type: 'stand',
-        direction: 'left',
-        duration: 800,
-      },
-    ]);
+    // this.map.startCutscene([
+    //   {type: "walk", who: "hero", direction: "up"},
+    //   {type: "walk", who: "hero", direction: "right"},
+    //   {type: "walk", who: "hero", direction: "right"},
+    //   {type: "walk", who: "hero", direction: "right"},
+    //   {type: "walk", who: "hero", direction: "right"},
+    //   {type: "walk", who: "hero", direction: "down"},
+    //   {type: "walk", who: "hero", direction: "down"},
+    //   {type: "walk", who: "hero", direction: "down"},
+    //   {type: "walk", who: "npcA", direction: "right"},
+    //   {type: "walk", who: "npcA", direction: "right"},
+    //   {type: "walk", who: "npcA", direction: "right"},
+    //   {type: "walk", who: "npcA", direction: "right"},
+    //   {type: "stand", who: "hero", direction: "left"},
+    //   {type: "textMessage", text: "Hey! You must be new here!"},
+    // //   {
+    // //     who: 'hero',
+    // //     type: 'walk',
+    // //     direction: 'down',
+    // //   },
+    // //   {
+    // //     who: 'hero',
+    // //     type: 'walk',
+    // //     direction: 'down',
+    // //   },
+    // //   {
+    // //     who: 'npcA',
+    // //     type: 'walk',
+    // //     direction: 'up',
+    // //   },
+    // //   {
+    // //     who: 'npcB',
+    // //     type: 'stand',
+    // //     direction: 'right',
+    // //     duration: 800,
+    // //   },
+    // //   {
+    // //     who: 'hero',
+    // //     type: 'stand',
+    // //     direction: 'left',
+    // //     duration: 800,
+    // //   },
+    // ]);
   }
 }

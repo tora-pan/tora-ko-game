@@ -11,6 +11,7 @@ class GameObject {
     });
     this.behaviorLoop = config.behaviorLoop || [];
     this.behaviorLoopIdx = 0;
+    this.talking = config.talking || [];
   }
   mount(map) {
     this.isMounted = true;
@@ -22,7 +23,11 @@ class GameObject {
 
   async doBehaviorEvent(map) {
     //Check if there is a cutscene playing or if there are no events
-    if (map.isCutscenePlaying || this.behaviorLoop.length === 0) {
+    if (
+      map.isCutscenePlaying ||
+      this.behaviorLoop.length === 0 ||
+      this.isStanding
+    ) {
       return;
     }
     //Set up the event
