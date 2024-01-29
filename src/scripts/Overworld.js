@@ -46,55 +46,36 @@ class Overworld {
     });
   }
 
-  init() {
-    this.map = new OverworldMap(window.OverworldMaps.DemoRoom);
+  bindHeroPositionCheck() {
+    document.addEventListener('PersonWalkingComplete', (e) => {
+      if (e.detail.whoId === 'hero') {
+        this.map.checkForFootstepCutscene();
+      }
+    });
+  }
+
+  startMap(map) {
+    this.map = new OverworldMap(map);
+    this.map.overworld = this;
     this.map.mountObjects();
-    this.directionInput = new DirectionInput();
+  }
+
+  init() {
+    this.startMap(window.OverworldMaps.DemoRoom);
+
     this.bindActionInput();
+    this.bindHeroPositionCheck();
+
+    this.directionInput = new DirectionInput();
     this.directionInput.init();
+
     this.startGameLoop();
-    // this.map.startCutscene([
-    //   {type: "walk", who: "hero", direction: "up"},
-    //   {type: "walk", who: "hero", direction: "right"},
-    //   {type: "walk", who: "hero", direction: "right"},
-    //   {type: "walk", who: "hero", direction: "right"},
-    //   {type: "walk", who: "hero", direction: "right"},
-    //   {type: "walk", who: "hero", direction: "down"},
-    //   {type: "walk", who: "hero", direction: "down"},
-    //   {type: "walk", who: "hero", direction: "down"},
-    //   {type: "walk", who: "npcA", direction: "right"},
-    //   {type: "walk", who: "npcA", direction: "right"},
-    //   {type: "walk", who: "npcA", direction: "right"},
-    //   {type: "walk", who: "npcA", direction: "right"},
-    //   {type: "stand", who: "hero", direction: "left"},
-    //   {type: "textMessage", text: "Hey! You must be new here!"},
-    // //   {
-    // //     who: 'hero',
-    // //     type: 'walk',
-    // //     direction: 'down',
-    // //   },
-    // //   {
-    // //     who: 'hero',
-    // //     type: 'walk',
-    // //     direction: 'down',
-    // //   },
-    // //   {
-    // //     who: 'npcA',
-    // //     type: 'walk',
-    // //     direction: 'up',
-    // //   },
-    // //   {
-    // //     who: 'npcB',
-    // //     type: 'stand',
-    // //     direction: 'right',
-    // //     duration: 800,
-    // //   },
-    // //   {
-    // //     who: 'hero',
-    // //     type: 'stand',
-    // //     direction: 'left',
-    // //     duration: 800,
-    // //   },
-    // ]);
+    this.map.startCutscene([
+      {
+        type: 'textMessage',
+        text: "Welcome to Tora-Ko-Game! Let's embark on your journey to learning web development!",
+        faceHero: 'hero',
+      },
+    ]);
   }
 }

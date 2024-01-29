@@ -1,7 +1,5 @@
 class KeyPressListener {
   constructor(keycode, callback) {
-    console.log('KeyPressListener constructor'
-    );
     let keysafe = true;
     this.keydownFunction = (e) => {
       if (e.keyCode === keycode && keysafe) {

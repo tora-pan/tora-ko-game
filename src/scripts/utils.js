@@ -27,4 +27,19 @@ const utils = {
     const event = new CustomEvent(name, { detail });
     document.dispatchEvent(event);
   },
+  getOppositeDirection(heroDirection) {
+    if (heroDirection === 'up') {
+      return 'down';
+    }
+    if (heroDirection === 'down') {
+      return 'up';
+    }
+    if (heroDirection === 'left') {
+      return 'right';
+    }
+    if (heroDirection === 'right') {
+      return 'left';
+    }
+    return null;
+  }
 };

@@ -59,7 +59,6 @@ class Person extends GameObject {
       if (this.movingProgressRemainging === 0) {
         //Send the finished notification
         utils.emitEvent('PersonWalkingComplete', { whoId: this.id });
-        console.log('PersonWalkingComplete');
       }
     }
   }
