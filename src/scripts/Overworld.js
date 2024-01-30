@@ -70,12 +70,5 @@ class Overworld {
     this.directionInput.init();
 
     this.startGameLoop();
-    this.map.startCutscene([
-      {
-        type: 'textMessage',
-        text: "Welcome to Tora-Ko-Game! Let's embark on your journey to learning web development!",
-        faceHero: 'hero',
-      },
-    ]);
   }
 }
