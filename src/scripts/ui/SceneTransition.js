@@ -19,7 +19,6 @@ class SceneTransition {
   }
 
   init(container, callback) {
-    console.log(container);
     this.createElement();
     container.appendChild(this.element);
 
