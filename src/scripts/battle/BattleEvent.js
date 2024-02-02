@@ -9,6 +9,7 @@ class BattleEvent {
       .replace('{CASTER}', this.event.caster?.name)
       .replace('{TARGET}', this.event.target?.name)
       .replace('{ACTION}', this.event.action?.name);
+
     const message = new TextMessage({
       text,
       onComplete: () => {
@@ -21,9 +22,10 @@ class BattleEvent {
   async stateChange(resolve) {
     const { caster, target, damage } = this.event;
     console.log(target);
+    target.pizzaElement.classList.remove('Combatant_pizza_idle');
+    caster.pizzaElement.classList.remove('Combatant_pizza_idle');
     if (damage) {
       target.pizzaElement.classList.add('battle-damage-blink');
-
       target.update({
         hp: target.hp - damage,
       });
@@ -35,6 +37,8 @@ class BattleEvent {
     }
     await utils.wait(600);
     target.pizzaElement.classList.remove('battle-damage-blink');
+    target.pizzaElement.classList.add('Combatant_pizza_idle');
+    caster.pizzaElement.classList.add('Combatant_pizza_idle');
     resolve();
   }
 

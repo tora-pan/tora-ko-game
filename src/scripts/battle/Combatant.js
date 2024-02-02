@@ -45,6 +45,7 @@ class Combatant {
 
     this.pizzaElement = document.createElement('img');
     this.pizzaElement.classList.add('Pizza');
+    this.pizzaElement.classList.add('Combatant_pizza_idle');
     this.pizzaElement.setAttribute('src', this.src);
     this.pizzaElement.setAttribute('alt', this.name);
     this.pizzaElement.setAttribute('data-team', this.team);
