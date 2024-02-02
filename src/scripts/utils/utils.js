@@ -41,5 +41,10 @@ const utils = {
       return 'left';
     }
     return null;
+  },
+  wait(ms) {
+    return new Promise((resolve) => {
+      setTimeout(resolve, ms);
+    });
   }
 };
