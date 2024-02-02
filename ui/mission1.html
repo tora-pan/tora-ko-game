@@ -1,37 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
 
   <title>Tile Map Editor</title>
+  <style>
+    .container {
+      width: 80%;
+      background-color: gray;
+      margin: auto;
+
+    }
+
+    .left-bar {
+      width: 20%;
+      height: 300px;
+      margin-top: 20px;
+      background-color: blue;
+      display: grid;
+      grid-template-columns: 20%;
+
+    }
+
+    .right-bar {
+      display: flex;
+      justify-content: flex-end;
+      width: 80%;
+      height: 250px;
+      background-color: yellow;
+      height: 250px;
+      display: grid;
+      grid-template-columns: 80%;
+      margin-left: 10px;
+      margin-top: 10px;
+      margin-right: 10px;
+
+    }
+
+    .export-image {
+      background-color: rgb(37, 113, 235);
+      color: white;
+      border: none;
+      height: 30px;
+      display: inline-block;
+
+    }
+
+    .clear-canvas {
+      background-color: gray;
+      margin-right: 20px;
+      display: inline-block;
+    }
+
+    .tiles {
+      display: inline-block;
+    }
+
+    .bar-flex {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .text-flex {
+      display: flex;
+      flex-direction: column;
+
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
 
-  <div class="sidebar">
-    <h3>sidebar</h3>
+    <div>
+      Tile Map Editor
+      <button class="clear-canvas">Clear Canvas</button>
+      <button class="export-image">Export Image</button>
+
+    </div>
+    <div class="bar-flex">
+      <div class="tiles">TILES</div>
+      <div class="left-bar"></div>
+      <div class="right-bar"></div>
+    </div>
+
+    <div class="text-flex">
+      <span>Click</span>to paint. <span>Shift + Clicks to remove</span>
+
+      <h2>EDITTING LAYER</h2>
+      <button class="clear-canvas">Top Layer</button>
+      <p></p><button class="clear-canvas">Middle Layer</button>
+      <p></p><button class="clear-canvas">Bottom Layer</button>
+
+    </div>
+
+
+
+
+
+
   </div>
-  <div class="content">
-    <h1>Main Content</h1>
-  </div>
 
-    <div >
-
-  Tile Map Editor
-
-  <button>Clear Canvas</button>
-  <button>Export Image</button>
-
-  <p>Click to paint. Shift + Click to remove</p>
-
-  <p>EDITTING LAYER</p>
-
-  <p><button>Top Layer</button></p>
-  <p><button>Middle Layer</button></p>
-  <button>bottom Layer</button>
-
-  </div>
-  
 </body>
+
 </html>
