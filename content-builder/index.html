@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Sprite Maker</title>
+  </head>
+  <body>
+    <div class="card">
+      <header>
+        <h1>Tile Map Editor</h1>
+        <div>
+          <button class="button-as-link" id="clear">Clear Canvas</button>
+          <button class="primary-button">Export Image</button>
+        </div>
+      </header>
+
+      <div class="card_body">
+        <aside>
+          <label>Tiles</label>
+          <div class="tileset-container">
+            <img id="tileset-source1" crossorigin="" />
+            <div class="tileset-container_selection"></div>
+          </div>
+        </aside>
+        <div class="card_right-column" id="card-right">
+          <canvas width="480" height="480" id="canvas"></canvas>
+
+          <div>
+            <label>Editing Layer:</label>
+            <ul class="layers">
+              <li>
+                <button class="layer" onclick="setLayer(this)" data-layer="2">
+                  Top Layer
+                </button>
+              </li>
+              <li>
+                <button class="layer" onclick="setLayer(this)" data-layer="1">
+                  Middle Layer
+                </button>
+              </li>
+              <li>
+                <button class="layer" onclick="setLayer(this)" data-layer="0">
+                  Bottom Layer
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvg@1.5.3/dist/browser/canvg.min.js"></script>
+</html>
