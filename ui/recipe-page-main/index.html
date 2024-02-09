@@ -10,8 +10,6 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
 
     body {
       background-color: hsl(30, 54%, 90%);
@@ -40,10 +38,19 @@
         }
 
     td {
-        border-bottom: 1px solid black;
+        /*border-bottom: 1px solid black;*/
         padding: 8px;
         text-align: left;
       }
+
+      tr {
+        border-bottom: 1px solid black;
+
+      }
+      tr:last-child {
+        border-bottom: none;
+      }
+
       .num {
         color: brown;
       }
@@ -51,9 +58,22 @@
       .main-div {
         background-color:white;
         width: 50%;
-        max-height: 100vh;
+        /*max-height: 100vh;
         overflow-y: auto;
-        margin: auto;
+        /*margin: auto;*/
+         margin: 100px auto;
+        padding: 20px;
+        border-radius: 15px;
+        white-space: nowrap;
+        min-width: auto;
+        
+        
+       
+      }
+
+      img {
+        overflow: hidden;
+         width: 100%;
       }
 
   </style>
@@ -61,13 +81,9 @@
 <body>
 
   <div class="main-div">
-
-
-    <img src="image/image-omelette.jpeg">
+    <img src="assets/images/image-omelette.jpeg">
   
-    <h1>
-      Simple Omelette Recipe
-    </h1>
+    <h1>Simple Omelette Recipe</h1>
   
     <p>
       An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs
@@ -78,20 +94,15 @@
   
      <div class="prep-time">
   
-       <h4>
-       Preparation time  
-       </h4>
+       <h4>Preparation time </h4>
        <li>Total: Approximately 10 minutes</li> 
        <li>Preparation: 5 minutes</li>
        <li>Cooking: 5 minutes</li>
-  
      </div>
   
      <div class="ingredients">
   
-       <h3>
-         Ingredients
-       </h3>
+       <h3> Ingredients</h3>
        <li>2-3 large eggs</li>
        <li>Salt, to taste</li>
        <li>Pepper, to taste</li>
@@ -149,12 +160,6 @@
       </table>
   
      </div>
-  </div>
-  
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
 </html>
