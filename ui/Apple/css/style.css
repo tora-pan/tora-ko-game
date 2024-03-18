@@ -1,0 +1,124 @@
+  html {
+    font-family: 'M PLUS 1', sans-serif;
+  }
+  
+  
+  
+  
+  header {
+    background-color: #fafafc;
+    color: rgba(0,0,0);
+    font-size: 12px;
+  }
+  
+  header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 940px;
+    margin: 0 auto;
+    height: 40px;
+  }
+
+  header a {
+    color: rgba(0,0,0);
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .section1 {
+    background-image: url(../image/iphone15\ pro.jpeg);
+    background-position: center top;
+    background-size: cover;
+    height: 690px;
+    color: #ffffff;
+    text-align: center; 
+  }
+
+  h1 {
+    font-size: 54px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    margin-bottom: 14px;
+    padding-top: 90px;
+  }
+ 
+  .heading {
+    font-size: 22px;
+  }
+
+    .section2 {
+    background-image: url(../image/iphone15\ pro\ pink.jpeg);
+    background-position: center top;
+    background-size: cover;
+    height: 690px;
+    text-align: center; 
+  }
+
+  h2 {
+    font-size: 54px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    margin-bottom: 14px;
+    padding-top: 90px;
+  }
+
+  .heading2 {
+    font-size: 22px;
+    padding-top: 60px;
+  }
+
+  .section3 {
+
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+
+  .col {
+    width: 49.6%;
+    background-position: center top;
+    background-size: cover;
+    height: 620px;
+    margin-bottom: 12px;
+  }
+
+  .col:nth-child(2n) {
+    background-image: none;
+    color: #ffffff;
+  }
+
+  .icon {
+    height: 450px;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    padding-top: 90px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+
+
+
+
+
+
+  footer {
+    text-align: center;
+    font-size: 12px;
+    background-color: whitesmoke;
+    padding: 20px 0 30px;
+  }
